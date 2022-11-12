@@ -150,7 +150,9 @@ class SignUpPage extends StatelessWidget {
           width: double.infinity,
           height: 55,
           child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'bonus');
+              },
               style: TextButton.styleFrom(
                 backgroundColor: kPrimaryColor,
                 shape: RoundedRectangleBorder(
@@ -192,7 +194,7 @@ class SignUpPage extends StatelessWidget {
     Widget tacButton() {
       return Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 50,
           bottom: 73,
         ),
