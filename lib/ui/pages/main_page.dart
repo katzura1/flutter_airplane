@@ -1,3 +1,4 @@
+import 'package:airplane/ui/pages/home_page.dart';
 import 'package:airplane/ui/widgets/custom_buttom_navigation_item.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
@@ -13,7 +14,7 @@ class MainPage extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: 60,
-          margin: EdgeInsets.only(bottom: 50, left: defaultMargin, right: defaultMargin),
+          margin: EdgeInsets.only(bottom: 30, left: defaultMargin, right: defaultMargin),
           decoration: BoxDecoration(
             color: kWhiteColor,
             borderRadius: BorderRadius.circular(defaultRadius + 1),
@@ -40,11 +41,15 @@ class MainPage extends StatelessWidget {
       );
     }
 
+    Widget buildContent() {
+      return HomePage();
+    }
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Stack(
         children: [
-          const Text("Main Page"),
+          buildContent(),
           customNavigationBar(),
         ],
       ),
