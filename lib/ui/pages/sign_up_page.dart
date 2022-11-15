@@ -87,12 +87,14 @@ class SignUpPage extends StatelessWidget {
           top: 50,
           bottom: 73,
         ),
-        child: Text("Terms and Conditions",
-            style: grayTextStyle.copyWith(
-              fontSize: 16,
-              fontWeight: light,
-              decoration: TextDecoration.underline,
-            )),
+        child: Text(
+          "Terms and Conditions",
+          style: grayTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+            decoration: TextDecoration.underline,
+          ),
+        ),
       );
     }
 
