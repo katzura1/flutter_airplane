@@ -1,4 +1,5 @@
 import 'package:airplane/ui/pages/home_page.dart';
+import 'package:airplane/ui/pages/setting_page.dart';
 import 'package:airplane/ui/widgets/custom_buttom_navigation_item.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
@@ -42,7 +43,7 @@ class MainPage extends StatelessWidget {
     }
 
     Widget buildContent() {
-      return HomePage();
+      return SettingPage();
     }
 
     return Scaffold(
