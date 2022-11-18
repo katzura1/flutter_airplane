@@ -54,7 +54,11 @@ class BonusPage extends StatelessWidget {
                   width: 24,
                   height: 24,
                   margin: const EdgeInsets.only(right: 4),
-                  decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/image_logo.png'))),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/image_logo.png'),
+                    ),
+                  ),
                 ),
                 Text(
                   "Pay",
@@ -118,7 +122,7 @@ class BonusPage extends StatelessWidget {
         title: "Start Fly Now",
         width: 220,
         margin: const EdgeInsets.only(top: 50),
-        onPressed: () => Navigator.pushNamed(context, 'main'),
+        onPressed: () => Navigator.pushNamed(context, '/main'),
       );
     }
 
