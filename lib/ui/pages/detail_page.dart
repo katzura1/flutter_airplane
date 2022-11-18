@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/choose_seat_page.dart';
 import 'package:airplane/ui/widgets/custom_button.dart';
@@ -20,7 +18,7 @@ class DetailPage extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: const AssetImage("assets/image_destination_1.png"),
+            image: AssetImage("assets/image_destination_1.png"),
           ),
         ),
       );
@@ -131,7 +129,7 @@ class DetailPage extends StatelessWidget {
                 height: 6,
               ),
               Row(
-                children: [
+                children: const [
                   PhotoItem(
                     imageUrl: 'assets/image_photo_1.png',
                   ),
@@ -157,7 +155,7 @@ class DetailPage extends StatelessWidget {
                 height: 6,
               ),
               Row(
-                children: [
+                children: const [
                   InteresetItem(
                     text: 'Kids Park',
                   ),
@@ -170,7 +168,7 @@ class DetailPage extends StatelessWidget {
                 height: 10,
               ),
               Row(
-                children: [
+                children: const [
                   InteresetItem(
                     text: 'City Museum',
                   ),
@@ -213,7 +211,7 @@ class DetailPage extends StatelessWidget {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ChooseSeatPage(),
+                    builder: (context) => const ChooseSeatPage(),
                   ),
                 ),
                 width: 170,

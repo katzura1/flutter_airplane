@@ -23,21 +23,21 @@ class SignUpPage extends StatelessWidget {
 
     Widget inputSecion() {
       Widget nameInput() {
-        return const customTextFormField(
+        return const CustomTextFormField(
           title: "Full Name",
           hintText: "Your Full Name",
         );
       }
 
       Widget emailInput() {
-        return const customTextFormField(
+        return const CustomTextFormField(
           title: "Email Address",
           hintText: "Your Email Address",
         );
       }
 
       Widget passwordInput() {
-        return const customTextFormField(
+        return const CustomTextFormField(
           title: "Password",
           hintText: "Your Password",
           isObsecure: true,
@@ -45,7 +45,7 @@ class SignUpPage extends StatelessWidget {
       }
 
       Widget hobbyInput() {
-        return const customTextFormField(
+        return const CustomTextFormField(
           title: "Hobby",
           hintText: "Your Hobby",
         );

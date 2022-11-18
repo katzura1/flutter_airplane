@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -27,11 +27,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // home: Splashpage(),
         routes: {
-          '/': (context) => SplashPage(),
-          '/get-started': (context) => GetStartedPage(),
-          '/sign-up': (context) => SignUpPage(),
-          '/bonus': (context) => BonusPage(),
-          '/main': (context) => MainPage(),
+          '/': (context) => const SplashPage(),
+          '/get-started': (context) => const GetStartedPage(),
+          '/sign-up': (context) => const SignUpPage(),
+          '/bonus': (context) => const BonusPage(),
+          '/main': (context) => const MainPage(),
         },
       ),
     );

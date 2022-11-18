@@ -18,7 +18,7 @@ class DestinationCard extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => DetailPage(),
+          builder: (context) => const DetailPage(),
         ),
       ),
       child: Container(

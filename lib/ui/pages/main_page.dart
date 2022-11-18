@@ -26,7 +26,7 @@ class MainPage extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
+            children: const [
               CustomButtonNavigationItem(
                 index: 0,
                 imageUrl: 'assets/icon_home.png',
@@ -52,15 +52,15 @@ class MainPage extends StatelessWidget {
     Widget buildContent(int currentIndex) {
       switch (currentIndex) {
         case 0:
-          return HomePage();
+          return const HomePage();
         case 1:
-          return TransactionsPage();
+          return const TransactionsPage();
         case 2:
-          return WalletPage();
+          return const WalletPage();
         case 3:
-          return SettingPage();
+          return const SettingPage();
         default:
-          return HomePage();
+          return const HomePage();
       }
     }
 

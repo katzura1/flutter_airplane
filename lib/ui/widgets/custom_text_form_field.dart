@@ -1,15 +1,15 @@
 import 'package:airplane/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-class customTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatelessWidget {
   final String title;
   final String hintText;
   final bool isObsecure;
 
-  const customTextFormField({
+  const CustomTextFormField({
     Key? key,
-    required String this.title,
-    required String this.hintText,
+    required this.title,
+    required this.hintText,
     this.isObsecure = false,
   }) : super(key: key);
 

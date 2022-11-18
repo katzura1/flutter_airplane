@@ -13,8 +13,8 @@ class InteresetItem extends StatelessWidget {
           Container(
             height: 16,
             width: 16,
-            margin: EdgeInsets.only(right: 6),
-            decoration: BoxDecoration(
+            margin: const EdgeInsets.only(right: 6),
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage('assets/icon_check.png'),

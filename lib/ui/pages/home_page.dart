@@ -1,5 +1,4 @@
 import 'package:airplane/shared/theme.dart';
-import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:airplane/ui/widgets/destination_card.dart';
 import 'package:airplane/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +67,7 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: [
+            children: const [
               DestinationCard(
                 title: "Lake Ciliwung",
                 rate: 4.8,
@@ -126,31 +125,31 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            DestinationTile(
+            const DestinationTile(
               title: "Danau Beratan",
               city: "Singaraja",
               imageUrl: "assets/image_destination_6.png",
               rate: 4.5,
             ),
-            DestinationTile(
+            const DestinationTile(
               title: "Sydney Opera",
               city: "Australia",
               imageUrl: "assets/image_destination_7.png",
               rate: 4.7,
             ),
-            DestinationTile(
+            const DestinationTile(
               title: "Roma",
               city: "Italy",
               imageUrl: "assets/image_destination_8.png",
               rate: 4.8,
             ),
-            DestinationTile(
+            const DestinationTile(
               title: "Payung Teduh",
               city: "Singapore",
               imageUrl: "assets/image_destination_9.png",
               rate: 4.8,
             ),
-            DestinationTile(
+            const DestinationTile(
               title: "Hill Hey",
               city: "Monaco",
               imageUrl: "assets/image_destination_10.png",

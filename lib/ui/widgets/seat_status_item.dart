@@ -10,13 +10,13 @@ class SeatStatusItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(right: 10),
+        margin: const EdgeInsets.only(right: 10),
         child: Row(
           children: [
             Container(
               height: 16,
               width: 16,
-              margin: EdgeInsets.only(right: 6),
+              margin: const EdgeInsets.only(right: 6),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(imageUrl),

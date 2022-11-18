@@ -20,7 +20,7 @@ class BonusPage extends StatelessWidget {
             BoxShadow(
               color: kPrimaryColor.withOpacity(0.5),
               blurRadius: 50.0,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
             )
           ],
         ),

@@ -1,4 +1,3 @@
-import 'package:airplane/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class Star extends StatelessWidget {

@@ -12,14 +12,14 @@ class CheckoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget route() {
       return Container(
-        margin: EdgeInsets.only(top: 50),
+        margin: const EdgeInsets.only(top: 50),
         child: Column(
           children: [
             Container(
               width: 291,
               height: 65,
-              margin: EdgeInsets.only(bottom: 10),
-              decoration: BoxDecoration(
+              margin: const EdgeInsets.only(bottom: 10),
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                     'assets/image_checkout.png',
@@ -76,8 +76,8 @@ class CheckoutPage extends StatelessWidget {
     Widget bookingDetails() {
       return Container(
         width: double.infinity,
-        margin: EdgeInsets.only(top: 30),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        margin: const EdgeInsets.only(top: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         decoration: BoxDecoration(
           color: kWhiteColor,
           borderRadius: BorderRadius.circular(defaultRadius),
@@ -95,7 +95,7 @@ class CheckoutPage extends StatelessWidget {
                     right: 16.0,
                   ),
                   decoration: BoxDecoration(
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage("assets/image_photo_2.png"),
                     ),
@@ -136,7 +136,7 @@ class CheckoutPage extends StatelessWidget {
             ),
             //Booking Detail
             Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 20,
               ),
               child: Text(
@@ -147,7 +147,7 @@ class CheckoutPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             BookingDetailItem(
@@ -155,7 +155,7 @@ class CheckoutPage extends StatelessWidget {
               text: "2 person",
               color: kBlackColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             BookingDetailItem(
@@ -163,7 +163,7 @@ class CheckoutPage extends StatelessWidget {
               text: "A3,B3",
               color: kBlackColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             BookingDetailItem(
@@ -171,7 +171,7 @@ class CheckoutPage extends StatelessWidget {
               text: "YES",
               color: kGreenColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
 
@@ -180,7 +180,7 @@ class CheckoutPage extends StatelessWidget {
               text: "NO",
               color: kRedColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             BookingDetailItem(
@@ -188,7 +188,7 @@ class CheckoutPage extends StatelessWidget {
               text: "45%",
               color: kBlackColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             BookingDetailItem(
@@ -196,7 +196,7 @@ class CheckoutPage extends StatelessWidget {
               text: "IDR 8.500.690",
               color: kBlackColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             BookingDetailItem(
@@ -212,8 +212,8 @@ class CheckoutPage extends StatelessWidget {
     Widget balanceDetails() {
       return Container(
         width: double.infinity,
-        margin: EdgeInsets.only(top: 30),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        margin: const EdgeInsets.only(top: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         decoration: BoxDecoration(
           color: kWhiteColor,
           borderRadius: BorderRadius.circular(defaultRadius),
@@ -228,7 +228,7 @@ class CheckoutPage extends StatelessWidget {
                 fontWeight: semiBold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Row(
@@ -236,12 +236,12 @@ class CheckoutPage extends StatelessWidget {
                 Container(
                   width: 100,
                   height: 70,
-                  margin: EdgeInsets.only(right: 16),
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  margin: const EdgeInsets.only(right: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(
                     // color: kPrimaryColor,
                     borderRadius: BorderRadius.circular(defaultRadius),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('assets/image_card.png'),
                     ),
                   ),
@@ -251,8 +251,8 @@ class CheckoutPage extends StatelessWidget {
                         Container(
                           height: 24,
                           width: 24,
-                          margin: EdgeInsets.only(right: 6),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.only(right: 6),
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage('assets/image_logo.png'),
@@ -300,13 +300,13 @@ class CheckoutPage extends StatelessWidget {
     Widget payButton() {
       return Container(
         width: double.infinity,
-        margin: EdgeInsets.only(top: 30),
+        margin: const EdgeInsets.only(top: 30),
         child: CustomButton(
           title: "Pay Now",
           onPressed: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => SuccessCheckoutPage(),
+              builder: (context) => const SuccessCheckoutPage(),
             ),
           ),
         ),
@@ -317,7 +317,7 @@ class CheckoutPage extends StatelessWidget {
       return Container(
         alignment: Alignment.center,
         width: double.infinity,
-        margin: EdgeInsets.symmetric(vertical: 30),
+        margin: const EdgeInsets.symmetric(vertical: 30),
         child: Text(
           "Terms and Conditions",
           style: grayTextStyle.copyWith(
