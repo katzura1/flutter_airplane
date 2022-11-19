@@ -15,30 +15,36 @@ class CustomButtonNavigationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        context.read<PageCubit>().setPage(index);
+    // print(context.read<PageCubit>().state);
+    return BlocConsumer<PageCubit, int>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return GestureDetector(
+          onTap: () {
+            context.read<PageCubit>().setPage(index);
+          },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const SizedBox(),
+              Image.asset(
+                imageUrl,
+                width: 24,
+                height: 24,
+                color: context.read<PageCubit>().state == index ? kPrimaryColor : kGrayColor,
+              ),
+              Container(
+                width: 30,
+                height: 2,
+                decoration: BoxDecoration(
+                  color: context.read<PageCubit>().state == index ? kPrimaryColor : kTransparentColor,
+                ),
+              ),
+              const SizedBox(),
+            ],
+          ),
+        );
       },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SizedBox(),
-          Image.asset(
-            imageUrl,
-            width: 24,
-            height: 24,
-            color: context.read<PageCubit>().state == index ? kPrimaryColor : kGrayColor,
-          ),
-          Container(
-            width: 30,
-            height: 2,
-            decoration: BoxDecoration(
-              color: context.read<PageCubit>().state == index ? kPrimaryColor : kTransparentColor,
-            ),
-          ),
-          const SizedBox(),
-        ],
-      ),
     );
   }
 }
