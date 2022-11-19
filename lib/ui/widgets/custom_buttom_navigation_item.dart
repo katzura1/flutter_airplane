@@ -16,8 +16,7 @@ class CustomButtonNavigationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // print(context.read<PageCubit>().state);
-    return BlocConsumer<PageCubit, int>(
-      listener: (context, state) {},
+    return BlocBuilder<PageCubit, int>(
       builder: (context, state) {
         return GestureDetector(
           onTap: () {

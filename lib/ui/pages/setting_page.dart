@@ -1,3 +1,4 @@
+import 'package:airplane/cubit/page_cubit.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,12 +19,13 @@ class SettingPage extends StatelessWidget {
             backgroundColor: kRedColor,
           ));
         } else if (state is AuthInitial) {
-          Navigator.pushNamedAndRemoveUntil(context, '/sign-up', (route) => false);
+          context.read<PageCubit>().setPage(0);
+          Navigator.pushNamedAndRemoveUntil(context, '/sign-in', (route) => false);
         }
       },
       builder: (context, state) {
         if (state is AuthLoading) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }
