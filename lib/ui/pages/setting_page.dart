@@ -1,4 +1,5 @@
 import 'package:airplane/cubit/page_cubit.dart';
+import 'package:airplane/cubit/seat_cubit.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +21,8 @@ class SettingPage extends StatelessWidget {
           ));
         } else if (state is AuthInitial) {
           context.read<PageCubit>().setPage(0);
+          context.read<SeatCubit>().clearSeat();
+
           Navigator.pushNamedAndRemoveUntil(context, '/sign-in', (route) => false);
         }
       },

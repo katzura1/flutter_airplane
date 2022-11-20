@@ -1,7 +1,9 @@
 import 'package:airplane/cubit/auth_cubit.dart';
+import 'package:airplane/cubit/seat_cubit.dart';
+import 'package:airplane/cubit/transaction_cubit.dart';
 import 'package:airplane/models/transaction_model.dart';
 import 'package:airplane/shared/theme.dart';
-import 'package:airplane/ui/pages/success_checkout_page.dart';
+import 'package:airplane/shared/utility.dart';
 import 'package:airplane/ui/widgets/booking_detail_item.dart';
 import 'package:airplane/ui/widgets/custom_button.dart';
 import 'package:airplane/ui/widgets/star.dart';
@@ -9,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CheckoutPage extends StatelessWidget {
-  final TransactionsModel transaction;
+  final TransactionModel transaction;
   const CheckoutPage({Key? key, required this.transaction}) : super(key: key);
 
   @override
@@ -303,25 +305,39 @@ class CheckoutPage extends StatelessWidget {
               ),
             );
           } else {
-            return SizedBox();
+            return const SizedBox();
           }
         },
       );
     }
 
     Widget payButton() {
-      return Container(
-        width: double.infinity,
-        margin: const EdgeInsets.only(top: 30),
-        child: CustomButton(
-          title: "Pay Now",
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const SuccessCheckoutPage(),
+      return BlocConsumer<TransactionCubit, TransactionState>(
+        listener: (context, state) {
+          if (state is TransactionFailed) {
+            alert(context, state.error);
+          } else if (state is TransactionSuccess) {
+            context.read<SeatCubit>().clearSeat();
+            Navigator.pushNamedAndRemoveUntil(context, '/success-checkout', (route) => false);
+          }
+        },
+        builder: (context, state) {
+          if (state is TransactionLoading) {
+            return Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.only(top: 30),
+              child: const CircularProgressIndicator(),
+            );
+          }
+          return Container(
+            width: double.infinity,
+            margin: const EdgeInsets.only(top: 30),
+            child: CustomButton(
+              title: "Pay Now",
+              onPressed: () => context.read<TransactionCubit>().createTransaction(transaction),
             ),
-          ),
-        ),
+          );
+        },
       );
     }
 

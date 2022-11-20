@@ -23,7 +23,7 @@ class DestinationSuccess extends DestinationState {
 class DestinationFailed extends DestinationState {
   final String error;
 
-  DestinationFailed(this.error);
+  const DestinationFailed(this.error);
 
   @override
   List<Object> get props => [error];

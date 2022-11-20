@@ -8,7 +8,7 @@ class DestinationModel extends Equatable {
   final double rate;
   final double price;
 
-  DestinationModel({
+  const DestinationModel({
     required this.id,
     this.title = '',
     this.city = '',
@@ -25,6 +25,15 @@ class DestinationModel extends Equatable {
         rate: json['rate'].toDouble(),
         price: json['price'].toDouble(),
       );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'title': title,
+        'city': city,
+        'imageUrl': imageUrl,
+        'rate': rate,
+        'price': price,
+      };
 
   @override
   List<Object?> get props => [id, title, city, imageUrl, rate, price];

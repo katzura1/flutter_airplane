@@ -1,4 +1,5 @@
 import 'package:airplane/cubit/auth_cubit.dart';
+import 'package:airplane/shared/utility.dart';
 import 'package:airplane/ui/widgets/custom_button.dart';
 import 'package:airplane/ui/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -68,12 +69,7 @@ class SignUpPage extends StatelessWidget {
             if (state is AuthSuccess) {
               Navigator.pushNamedAndRemoveUntil(context, '/bonus', (route) => false);
             } else if (state is AuthFailed) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  backgroundColor: kRedColor,
-                  content: Text(state.error),
-                ),
-              );
+              alert(context, state.error);
             }
           },
           builder: (context, state) {

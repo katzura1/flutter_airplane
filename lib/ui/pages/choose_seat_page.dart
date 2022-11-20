@@ -2,13 +2,13 @@ import 'package:airplane/cubit/seat_cubit.dart';
 import 'package:airplane/models/destination_model.dart';
 import 'package:airplane/models/transaction_model.dart';
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/shared/utility.dart';
 import 'package:airplane/ui/pages/checkout_page.dart';
 import 'package:airplane/ui/widgets/custom_button.dart';
 import 'package:airplane/ui/widgets/seat_item.dart';
 import 'package:airplane/ui/widgets/seat_status_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 
 class ChooseSeatPage extends StatelessWidget {
   final DestinationModel destination;
@@ -272,10 +272,10 @@ class ChooseSeatPage extends StatelessWidget {
                         ),
                       ),
                       const SeatItem(
-                        id: 'A5',
+                        id: 'C5',
                       ),
                       const SeatItem(
-                        id: 'A5',
+                        id: 'D5',
                       ),
                     ],
                   ),
@@ -338,13 +338,18 @@ class ChooseSeatPage extends StatelessWidget {
             child: CustomButton(
               title: "Continue to Checkout",
               onPressed: () {
+                if (state.isEmpty) {
+                  alert(context, 'Please select seat');
+                  return;
+                }
+
                 double price = state.length * destination.price;
                 double vat = 0.45;
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => CheckoutPage(
-                      transaction: TransactionsModel(
+                      transaction: TransactionModel(
                         destination: destination,
                         amountOfTraveler: state.length,
                         selectedSeat: state.join(', '),
