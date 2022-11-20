@@ -1,16 +1,13 @@
+import 'package:airplane/models/destination_model.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:airplane/ui/widgets/star.dart';
 import 'package:flutter/material.dart';
 
 class DestinationCard extends StatelessWidget {
-  final String title;
-  final double rate;
-  final String city;
-  final String imageUrl;
+  final DestinationModel destination;
 
-  const DestinationCard({Key? key, required this.title, this.rate = 0.0, required this.city, required this.imageUrl})
-      : super(key: key);
+  const DestinationCard({Key? key, required this.destination}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,9 @@ class DestinationCard extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const DetailPage(),
+          builder: (context) => DetailPage(
+            destination: destination,
+          ),
         ),
       ),
       child: Container(
@@ -41,7 +40,7 @@ class DestinationCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(defaultRadius),
                 image: DecorationImage(
-                  image: AssetImage(imageUrl),
+                  image: NetworkImage(destination.imageUrl),
                 ),
               ),
               child: Align(
@@ -56,7 +55,7 @@ class DestinationCard extends StatelessWidget {
                     ),
                   ),
                   child: Star(
-                    rate: rate,
+                    rate: destination.rate,
                     style: blackTextStyle.copyWith(
                       fontWeight: medium,
                     ),
@@ -72,7 +71,7 @@ class DestinationCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    destination.title,
                     style: blackTextStyle.copyWith(
                       fontSize: 18,
                       fontWeight: medium,
@@ -82,7 +81,7 @@ class DestinationCard extends StatelessWidget {
                     height: 5.0,
                   ),
                   Text(
-                    city,
+                    destination.city,
                     style: grayTextStyle.copyWith(
                       fontWeight: light,
                     ),

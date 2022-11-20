@@ -1,15 +1,12 @@
+import 'package:airplane/models/destination_model.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:airplane/ui/widgets/star.dart';
 import 'package:flutter/material.dart';
 
 class DestinationTile extends StatelessWidget {
-  final String title;
-  final String city;
-  final String imageUrl;
-  final double rate;
-  const DestinationTile({Key? key, required this.title, required this.city, required this.imageUrl, this.rate = 0.0})
-      : super(key: key);
+  final DestinationModel destination;
+  const DestinationTile({Key? key, required this.destination}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +14,9 @@ class DestinationTile extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const DetailPage(),
+          builder: (context) => DetailPage(
+            destination: destination,
+          ),
         ),
       ),
       child: Container(
@@ -42,7 +41,7 @@ class DestinationTile extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(imageUrl),
+                  image: NetworkImage(destination.imageUrl),
                 ),
                 borderRadius: BorderRadius.circular(defaultRadius),
               ),
@@ -53,7 +52,7 @@ class DestinationTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    title,
+                    destination.title,
                     style: blackTextStyle.copyWith(
                       fontSize: 18,
                       fontWeight: medium,
@@ -63,7 +62,7 @@ class DestinationTile extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                    city,
+                    destination.city,
                     style: grayTextStyle.copyWith(
                       fontWeight: light,
                     ),
@@ -72,7 +71,7 @@ class DestinationTile extends StatelessWidget {
               ),
             ),
             Star(
-              rate: rate,
+              rate: destination.rate,
               style: blackTextStyle.copyWith(
                 fontWeight: medium,
               ),
