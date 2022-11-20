@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 Color kPrimaryColor = const Color(0xff5C40CC);
 Color kBlackColor = const Color(0xff1F1449);
@@ -45,3 +46,9 @@ FontWeight black = FontWeight.w900;
 
 double defaultMargin = 24.0;
 double defaultRadius = 17.0;
+
+NumberFormat currencyFormat = NumberFormat.currency(
+  locale: 'id',
+  symbol: 'IDR ',
+  decimalDigits: 0,
+);
